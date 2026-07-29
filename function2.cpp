@@ -15,6 +15,7 @@ int main(){
     cout<<&b<<"\n";
     r=sum(&a,&b);   
     cout<<r<<"\n";
+    cout<<*(&a)<<" "<<*(&b)<<"\n";
     return 0;
 }
 

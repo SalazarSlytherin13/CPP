@@ -3,8 +3,10 @@
 #include<iostream>
 using namespace std;
 
+// Function Declaration
 int add(int, int);
 
+// Caller Function
 int main(){
     int x,y,z;
     cout<<"Enter the values: "<<"\n";
@@ -14,6 +16,7 @@ int main(){
     return 0;
 }
 
+// Function Definition
 int add(int a, int b){
     int c=a+b;
     return c;
