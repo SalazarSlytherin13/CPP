@@ -53,20 +53,22 @@ class Stack{
 };
 
 int main(){
-    Stack stk(10);
-    stk.Push(1);
-    stk.Push(2);
-    stk.Push(3);
-    stk.Push(4);
-    stk.Push(5);
-    stk.Push(6);
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
+    string postfix;
+    cout<<"Enter the postfix expression: "<<"\n";
+    cin>>postfix;
+
+    Stack stk(20);
+
+    int i=0;
+    while(i<postfix.size()){
+        char symbol;
+        i++;
+
+        if(symbol>='0' && symbol<='9'){
+            stk.Push()
+        }
+        
+    }
    
 
     

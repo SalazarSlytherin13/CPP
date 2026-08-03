@@ -47,26 +47,39 @@ class Stack{
              else{
                 return false;
              }
-    }
-
+        }
 
 };
 
 int main(){
-    Stack stk(10);
-    stk.Push(1);
-    stk.Push(2);
-    stk.Push(3);
-    stk.Push(4);
-    stk.Push(5);
-    stk.Push(6);
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
-    cout<<stk.Pop()<<"\n";
+    int N;
+    Stack s(N);
+    cout<<"Enter the number: "<<"\n";
+    cin>>N;
+
+    while(N !=0){
+        int r=N%2;
+        s.Push(r);
+        N=N/2;
+    }
+    
+    // while(! IsEmpty(s)){
+    //     int x=Pop(s);
+    //     cout<<s;
+    // }
+    // stk.Push(1);
+    // stk.Push(2);
+    // stk.Push(3);
+    // stk.Push(4);
+    // stk.Push(5);
+    // stk.Push(6);
+    // cout<<stk.Pop()<<"\n";
+    // cout<<stk.Pop()<<"\n";
+    // cout<<stk.Pop()<<"\n";
+    // cout<<stk.Pop()<<"\n";
+    // cout<<stk.Pop()<<"\n";
+    // cout<<stk.Pop()<<"\n";
+    // cout<<stk.Pop()<<"\n";
    
 
     
