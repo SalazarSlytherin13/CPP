@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
 class Stack{
@@ -52,8 +53,7 @@ class Stack{
     }
 };
 
-
-    bool Prcd(char a, char b){
+bool Prcd(char a, char b){
         if(a=='^'|| a=='*'|| a=='/'|| a=='%'){
             if(b=='^'){
                 return false;
@@ -76,68 +76,16 @@ class Stack{
     }
   
 
+void infixToPrefix (string infix){
+   Stack S(20);
+   int i=0;
+   string prefix;
+
+   while(i<prefix.size()){
+    char symbol = infix[i];
+    i++;
     
+    if(symbol >='a' && symbol <='z' || symbol >='A' && symbol <='Z' || symbol >='0' && symbol <='9')
 
-
-void infixToPostfix(string infix){
-        Stack S(20);
-        int i=0;
-        string postfix;
-
-        while(i<infix.size()){
-            char symbol=infix[i];
-            i++;
-
-            if(symbol >= 'a' && symbol <= 'z' ){
-               S.Push(symbol);
-               postfix = postfix + symbol;
-            }
-
-            else{
-                while(!S.IsEmpty() && Prcd(S.StackTop(),symbol)){
-                    char x = S.Pop();
-                    postfix = postfix + x;
-                }
-            }
-        }
-
-        // while(!S.IsEmpty()){
-        //     char x = S.Pop();
-        //     postfix += x;
-        // }
-
-        cout<< postfix;
-    }
-    
-
-int main(){
-     
-    string infix;
-    cin>>infix;
-    infixToPostfix(infix);
-    
-
-
-    // string postfix;
-    // cout<<"Enter the postfix expression: "<<"\n";
-    // cin>>postfix;
-
-    // Stack s(20);
-
-    // int i=0;
-    // while(i<postfix.size()){
-    //     char symbol;
-    //     i++;
-
-       
-
-    //     if(symbol >= 'a' && symbol <= 'z'){
-    //        char x= s.Pop();
-    //        postfix=x+postfix;
-    //     }        
-    // }
-   
-
-    
-
+   }
 }
