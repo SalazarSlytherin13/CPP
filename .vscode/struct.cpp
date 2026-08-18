@@ -27,6 +27,12 @@ node *GetNode(){
     return p;
 }
 
+// node *FreeNode(){
+//     node *p;
+
+// }
+
+
 node *InsBeg(node *Head, int x){
     node *p;
     p=GetNode();
@@ -83,33 +89,117 @@ node *InsAft(node *Head, node *p, int x){
 
 }
 
-int main(){
-    node *Head=NULL;
+node* DelBeg(node* Head){
+    node* p=Head;
+    Head=Head->next;
+    int x=p->data;
+    free(p);
+    cout<<"Deleted node is: "<<x<<"\n";
+    return Head;
 
-    Head=InsBeg(Head,1);
-    Head=InsBeg(Head,2);
-    Head=InsBeg(Head,3);
-    Head=InsBeg(Head,4);
-    Head=InsBeg(Head,5);
-    Head=InsBeg(Head,6);
-    Head=InsBeg(Head,7);
-    Head=InsBeg(Head,8);
-    Head=InsEnd(Head,100);
 
-    node *p=Head;
-    int pos=4;
-    if(pos==1){
-        Head=InsBeg(Head,400);
-    }
-
-    else{
-    for(int i=1;i<pos-1;i++){
-        p=p->next;
-    }
-    Head=InsAft(Head,p,300);
 }
 
-Traverse(Head);
-    return 0;
+node* DelAft(node* Head,node* p){
+    node* q=GetNode();
+    q=p->next;
+    node*r=GetNode();
+    r=q->next;
+    int x=q->data;
+    free(q);
+    cout<<"Deleted node is: "<<x<<"\n";
+    return Head;
+
+}
+
+node* Push(node* Top, int x){
+    // Top=InsBeg(Top,x);
+    // return Top;
+    node *p;
+    p=GetNode();
+    p->data=x;
+    p->next=Top;
+    Top=p;
+    return Top;
+}
+
+node* Pop(node* Top){
+    // int x=Top->data;
+    // cout<<"Popped Element is: "<<"\n";
+    // Top=DelBeg(Top);
+    // return Top;
+    if(Top==NULL){
+        node* p;
+        p=Top;
+        Top=Top->next;
+        int x=p->data;
+        cout<<"Popped Element is: "<<x<<endl;
+        free(p);
+        return Top;
+
+    }
+
+}
+
+int StackTop(node* Top){
+    int x=Top->data;
+    return x;
+}
+
+bool IsEmpty(node* Top){
+    if(Top==NULL){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+int main(){
+
+    node* Top=NULL;
+    Top=Push(Top,1);
+    Top=Push(Top,2);
+    Top=Push(Top,3);
+    Top=Push(Top,4);
+    Top=Push(Top,5);
+    StackTop(Top);
+//     node *Head=NULL;
+
+//     Head=InsBeg(Head,1);
+//     Head=InsBeg(Head,2);
+//     Head=InsBeg(Head,3);
+//     Head=InsBeg(Head,4);
+//     Head=InsBeg(Head,5);
+//     Head=InsBeg(Head,6);
+//     Head=InsBeg(Head,7);
+//     Head=InsBeg(Head,8);
+//     Head=InsEnd(Head,100);
+
+//     node *p=Head;
+//     int pos=4;
+//     if(pos==1){
+//         Head=InsBeg(Head,400);
+//     }
+
+//     else{
+//     for(int i=1;i<pos-1;i++){
+//         p=p->next;
+//     }
+//     Head=InsAft(Head,p,300);
+// }
+
+// Traverse(Head);
+
+// Head=DelBeg(Head);
+// Traverse(Head);
+
+
+
+return 0;
+
+
+
+
 
 }
