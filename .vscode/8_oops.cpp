@@ -1,17 +1,45 @@
 #include<iostream>
 using namespace std;
 
-namespace first{
-    int a=10;
+namespace start{
+    int sum(int a, float b){
+        int d=a+b;
+        return d;
+       
+    }
 }
 
 namespace second{
-    double a=10.5;
+    int sum(int a, int b){
+        int c=a+b;
+        return c;
+    }
 }
+// namespace first{
+//     int a=10;
+// }
+
+// namespace second{
+//     double a=10.5;
+// }
 
 int main(){
-    string a="C++";
-    cout<<a<<"\n";
-    cout<<second::a<<"\n";
-    cout<<first::a<<"\n";
+
+    int n1,n2;
+    float n3;
+    cout<<"Enter the numbers: ";
+    cin>>n1>>n2>>n3;
+    
+    int sum=n1+n2+n3;
+    cout<<sum<<"\n";
+
+
+    int x=start::sum(n1,n3);
+    int y=second::sum(n1,n2);
+
+    cout<<x<<" "<<y;
+//     string a="C++";
+//     cout<<a<<"\n";
+//     cout<<second::a<<"\n";
+//     cout<<first::a<<"\n";
 }
