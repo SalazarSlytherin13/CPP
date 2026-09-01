@@ -10,7 +10,7 @@ node *front, *rear;
 
 node *GetNode(){
     node *p;
-    p=new node;
+    // p=new node;
     return p;
 }
 
