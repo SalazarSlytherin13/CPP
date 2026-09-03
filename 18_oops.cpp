@@ -3,34 +3,35 @@ using namespace std;
 
 class Example{
     int a;
-    static int n;
+    static int count;       //creation of class variable tells about the no. of objects created
 
     public: 
-      void geta(int);
+      void getdata(int);
       void display();
-      static void show();
 };
 
-int Example::n=10;
+int Example::count;
 
-void Example::geta(int x){
+void Example::getdata(int x){
     a=x;
+    count++;
     
 }
 
 void Example::display(){
     cout<<a<<"\n";
-    cout<<n<<"\n";
+    cout<<count<<"\n";
 
 }
 
-void Example::show(){
-    cout<<"Inside class member function: "<<n;
-}
 
 int main(){
-    Example E1;
-    E1.geta(8);
+    Example E1, E2, E3;
+    E1.getdata(11);
     E1.display();
-    Example::show();
+    E2.getdata(20);
+    E2.display();
+    E3.getdata(30);
+    E3.display();
+   
 }
