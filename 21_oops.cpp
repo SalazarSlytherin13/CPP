@@ -2,7 +2,7 @@
 using namespace std;
 
 class B;
-
+             //swapping of two numbers belonging to different classes
 class A{
     int a;
     public:
