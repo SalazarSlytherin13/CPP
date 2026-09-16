@@ -34,4 +34,5 @@ int main(){
     obj1.geta(n);
 
     obj2.display(obj1);
-}
+//  obj1.display(obj1);  
+ }
