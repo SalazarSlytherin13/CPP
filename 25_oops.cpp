@@ -6,7 +6,7 @@ class Startup{
     int b;
     public:
       void getData(string,int);
-      void print(Startup, Startup, Startup);
+      void print(Startup);
       friend Startup sum(Startup, Startup, Startup);
       void display(Startup);
       
@@ -19,10 +19,9 @@ void Startup::getData(string name,int amount){
 }
 
 
-void Startup::print(Startup S1, Startup S2, Startup S3){
-    cout<<"Name: "<<S1.a<<" "<<"Contribution: "<<S1.b<<endl;
-    cout<<"Name: "<<S2.a<<" "<<"Contribution: "<<S2.b<<endl;
-    cout<<"Name: "<<S3.a<<" "<<"Contribution: "<<S3.b<<endl;
+void Startup::print(Startup S){
+    cout<<"Name: "<<S.a<<" "<<"Contribution: "<<S.b<<endl;
+    
 }
 
 
@@ -35,7 +34,14 @@ Startup sum(Startup S1, Startup S2, Startup S3){
 }
 
 void Startup::display(Startup S4){
-    cout<<S4.b;
+    cout<<S4.b<<endl;
+
+    if(S4.b>=100000){
+        cout<<"Can start a startup";
+    }
+    else{
+        cout<<"Cannot start a startup";
+    }
 
 }
 
@@ -49,6 +55,10 @@ int main(){
     X1.getData(r1,n1);
     X2.getData(r2,n2);
     X3.getData(r3,n3);
+
+    X1.print(X1);
+    X2.print(X2);
+    X3.print(X3);
 
     X4=sum(X1,X2,X3);
 
