@@ -4,7 +4,7 @@ using namespace std;
 class Example{
     int a,b;
     public:
-      Example();
+      Example();       //Default Constructor
       void display();
 };
 
