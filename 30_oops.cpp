@@ -21,11 +21,11 @@ int main(){
     int n1, n2;
     cout<<"Enter the numbers: ";
     cin>>n1>>n2;
-    Example E1=Example(n1,n2);   //Calling the constructor explicitely
+    Example E1=Example(n1,n2);   //Calling the constructor explicitily
 
     E1.display();
     
 
-    Example E2(n1,n2);   //Calling the constructor implicitely
+    Example E2(n1,n2);   //Calling the constructor implicitily
     E2.display();
 }
