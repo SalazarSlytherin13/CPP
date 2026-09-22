@@ -20,7 +20,7 @@ void Sum::print(){
 
 int main(){
     int n1, n2;
-    cout<<"Enetr the numbers: ";
+    cout<<"Enter the numbers: ";
     cin>>n1>>n2;
 
     Sum S1(n1,n2);
