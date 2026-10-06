@@ -33,6 +33,8 @@ int main(){
     E1.getData(20);
     E1.show();
 
+    // E1.display();   //Not recommended
+ 
     Example::display();
 }
 
