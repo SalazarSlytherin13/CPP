@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 
-class Area{
-    float r;
+class Area{   //Area of Circle
+    float r;  
     public:
        void getData(float);
        float areaCircle();

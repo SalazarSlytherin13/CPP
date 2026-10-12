@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-class Example{
+class Example{   //Private member function can be declared normally and then called inside a public member function
     int a,b;
     void add();
     public:

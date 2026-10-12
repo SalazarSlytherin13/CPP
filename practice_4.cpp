@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-class Add{
+class Add{    //Function Overloading
     int a,b,e;
     float c,d;
     public:

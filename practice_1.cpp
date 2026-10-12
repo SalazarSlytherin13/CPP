@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-class Sum{
+class Sum{   //Sum of two numbers
     int a,b;
     public:
       void getData(int, int);
