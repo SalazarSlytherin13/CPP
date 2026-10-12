@@ -18,9 +18,9 @@ using namespace std;
 // int n=10;
 
 // int main(){
-    // Example E;
-    // E.getData();
-    // E.printData();
+//     Example E;
+//     E.getData();
+//     E.printData();
 
 //     int n=20;
 //     cout<<n<<"\n";
