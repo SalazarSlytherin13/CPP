@@ -2,7 +2,7 @@
 using namespace std;
 
 namespace start{
-    int sum(int a, float b){
+    float sum(int a, float b){
         int d=a+b;
         return d;
        
@@ -34,7 +34,7 @@ int main(){
     cout<<sum<<"\n";
 
 
-    int x=start::sum(n1,n3);
+    float x=start::sum(n1,n3);
     int y=second::sum(n1,n2);
 
     cout<<x<<" "<<y;
