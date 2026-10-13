@@ -1,4 +1,4 @@
-#include<ostream>
+#include<iostream>
 using namespace std;
 
 class Example;  //Forward Declaration of Class
@@ -40,6 +40,8 @@ int main(){
     int n1,n2;
     T1.getData(n1);
     E1.get(n2);
+    int r=E1.sum(T1,E1);
+    cout<<r<<endl;
     
    
     
