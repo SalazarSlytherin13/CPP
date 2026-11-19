@@ -6,30 +6,17 @@ using namespace std;
 
 int Partition(vector<int>A, int low, int high){
     int i=low;
-    int j=high+1;
+    int j=high;
     int pivot=A[low];
-
-    do{
-        do{
+    
+    while(i<j){
+        if(A[i]<=A[pivot] && i<=high-1){
             i++;
-        } while(A[i]<pivot);
-
-        do{
-            j--;
-        } while(A[j]>pivot);
-
-        if(i<j){
-            int temp=A[i];
-            A[i]=A[j];
-            A[j]=A[i];
         }
-    } while(i<j);
 
-    int swap=A[j];
-    A[j]=A[low];
-    A[low]=swap;
 
-    return j;
+    }
+
 
 }
 
