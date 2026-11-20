@@ -29,88 +29,55 @@
 // }
 
 
+
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
-class Process {
-public:
-    string PID;
-    int AT;   
-    int BT;   
-    int CT;   
-    int TAT;  
-    int WT;   
-
-    Process() {
-        CT = 0;
-        TAT = 0;
-        WT = 0;
-    }
-};
-
 int main() {
+    int n = 3;
 
-    int n;
+    int at[3] = {0, 1, 2};
+    int bt[3] = {4, 3, 2};
 
-    cout << "Enter no. of processes: ";
-    cin >> n;
+    int ct[3], tat[3], wt[3];
 
-    vector<Process> p(n);
-
-    
-    for (int i = 0; i < n; i++) {
-
-        cout << "\nEnter the process: ";
-        cin >> p[i].PID;
-
-        cout << "Enter the Arrival Time: ";
-        cin >> p[i].AT;
-
-        cout << "Enter the Burst Time: ";
-        cin >> p[i].BT;
-    }
-
-    
-    sort(p.begin(), p.end(), [](Process a, Process b) {
-        return a.AT < b.AT;
-    });
-
-    
-    int currentTime = 0;
+    float total_tat = 0, total_wt = 0;
 
     for (int i = 0; i < n; i++) {
-
-        
-        if (currentTime < p[i].AT) {
-            currentTime = p[i].AT;
+        if (i == 0) {
+            ct[i] = at[i] + bt[i];
+        }
+        else {
+            if (at[i] > ct[i-1])
+                ct[i] = at[i] + bt[i];
+            else
+                ct[i] = ct[i-1] + bt[i];
         }
 
-        p[i].CT = currentTime + p[i].BT;
+        tat[i] = ct[i] - at[i];
+        wt[i] = tat[i] - bt[i];
 
-        p[i].TAT = p[i].CT - p[i].AT;
-
-        p[i].WT = p[i].TAT - p[i].BT;
-
-        currentTime = p[i].CT;
+        total_tat += tat[i];
+        total_wt += wt[i];
     }
 
-    
-    cout << "\n\n";
-    cout << "PID\tAT\tBT\tCT\tTAT\tWT\n";
+    cout << "P\tAT\tBT\tCT\tTAT\tWT\n";
 
     for (int i = 0; i < n; i++) {
-        cout << p[i].PID << "\t"
-             << p[i].AT << "\t"
-             << p[i].BT << "\t"
-             << p[i].CT << "\t"
-             << p[i].TAT << "\t"
-             << p[i].WT << endl;
+        cout << "P" << i+1 << "\t"
+             << at[i] << "\t"
+             << bt[i] << "\t"
+             << ct[i] << "\t"
+             << tat[i] << "\t"
+             << wt[i] << endl;
     }
+
+    cout << "\nAverage TAT = " << total_tat/n;
+    cout << "\nAverage WT = " << total_wt/n;
 
     return 0;
 }
+
 
 
 
