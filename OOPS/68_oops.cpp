@@ -10,16 +10,15 @@ class Outer{
     };
 
     public:
-      void show(){
+       void show(){
         Inner obj;
         obj.display();
-      }
+       }
 };
 
 int main(){
-    Outer O1;
-    O1.show();
+   Outer O1;
+   O1.show();
 
-    return 0;
+   return 0;
 }
-
