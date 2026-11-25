@@ -19,11 +19,11 @@ void Example::display(){
 int main(){
     Example E(10);
     E.display();
-
+   
     Example *ptr=&E;
     cout<<ptr<<endl;
     ptr->display();
-    // cout<<(*ptr).display()<<endl;
+    (*ptr).display();
 
     return 0;
 }
